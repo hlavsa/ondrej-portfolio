@@ -58,9 +58,8 @@
           </div>
         </div>
         <!-- ... -->
-        <div class="v2_19 ml-24">
-          <div class="v2_2 ml-24"></div>
-          <canvas id="canvas" width="auto" height="80vh"></canvas>
+        <div class="v2_19 ml-24 relative">
+          <canvas id="canvas"></canvas>
           <div style="">
             <button onclick="javascript:clearArea();return false;">
               Clear Area
@@ -141,7 +140,11 @@
       }
 
       #canvas {
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: 1;
       }
 
