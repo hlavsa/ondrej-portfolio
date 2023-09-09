@@ -44,14 +44,16 @@
               </p>
             </div>
             <div class="">
-              <a class="text-xl underline underline-offset-4" href="#"
+              <a
+                class="text-xl underline underline-offset-4 hover:no-underline"
+                href="#"
                 >Projekty</a
               >
             </div>
             <div class="">
               <p class="text-xl">
                 Mám zájem o spolupráci se začínajícími firmami, kteří chtějí
-                vytvořit svůj bla bla.
+                vytvořit svůj bla bla.<br />
                 <a
                   href="mailto:"
                   class="underline underline-offset-4 hover:no-underline"
@@ -147,8 +149,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         z-index: 1;
       }
 
@@ -159,6 +159,15 @@
     <script>
       const canvas = document.getElementById("canvas");
       const context = canvas.getContext("2d");
+      resizeCanvas(); // Call the function to set initial canvas size
+
+      function resizeCanvas() {
+        canvas.width = canvas.parentElement.clientWidth; // Set canvas width to parent container's width
+        canvas.height = canvas.parentElement.clientHeight; // Set canvas height to parent container's height
+      }
+
+      window.addEventListener("resize", resizeCanvas); // Update canvas size when the window is resized
+
       let isDrawing = false;
       let x = 0;
       let y = 0;
