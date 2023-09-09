@@ -28,7 +28,7 @@
               <h1
                 class="p-4 dd transition ease-in-out delay-150 hover:bg-transparent"
               >
-                Ondrej ezr
+                Ondřej Ezr
               </h1>
             </div>
             <div class="pl-8 animate-pulse flex items-center space-x-4">
@@ -37,16 +37,16 @@
             </div>
           </div>
           <div class="flex flex-col justify-between h-full py-20">
-            <div class="flex-1">
+            <div class="">
               <p class="text-xl">
                 Ahoj, jsem Ondřej a jsem full-stack vývojář na volné noze z
                 České rubliky. Tohle umím a tohle mě baví.
               </p>
             </div>
-            <div class="flex-1">
+            <div class="">
               <a class="text-xl underline" href="#">Projekty</a>
             </div>
-            <div class="flex-1">
+            <div class="">
               <p class="text-xl">
                 Mám zájem o spolupráci se začínajícími firmami, kteří chtějí
                 vytvořit svůj bla bla.
@@ -90,6 +90,7 @@
       }
       body {
         font-size: 1rem;
+        font-family: "IBM Plex Mono", monospace;
         background: rgb(2, 0, 36);
         background: linear-gradient(
           156deg,
@@ -98,7 +99,7 @@
           rgba(2, 13, 20, 1) 100%
         );
         height: 100vh;
-        color: white;
+        color: #f2f2f2;
       }
 
       .v2_19 {
@@ -122,19 +123,21 @@
       .dd:hover {
         cursor: pointer;
         border: 1px solid #020024;
-        color: white;
+        color: #f2f2f2;
       }
-      .v2_2 {
-        width: auto;
-        height: 80vh;
+      .v2_19::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background: linear-gradient(
           rgba(52, 11, 139, 1),
           rgba(217, 217, 217, 0)
         );
-        opacity: 1;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-        overflow: hidden;
+        opacity: 0.7; /* Adjust the opacity as needed */
+        z-index: 1; /* Ensure the overlay is above the content */
       }
 
       #canvas {
