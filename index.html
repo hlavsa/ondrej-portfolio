@@ -21,12 +21,13 @@
   </head>
   <body>
     <div class="pt-12">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="pl-32 pr-24">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="pl-24 md:pl-32 pr-14 md:pr-24">
           <div class="flex items-center">
             <div class="">
               <h1
                 class="p-4 dd transition ease-in-out delay-150 hover:bg-transparent"
+                id="myHeading"
               >
                 Ondřej Ezr
               </h1>
@@ -156,6 +157,19 @@
         cursor: url("pencil-cursor.png"), auto;
       }
     </style>
+    <script>
+      const heading = document.getElementById("myHeading");
+
+      heading.addEventListener("touchstart", function () {
+        // Add a class on touchstart (simulating hover effect)
+        heading.classList.add("hover:bg-transparent");
+      });
+
+      heading.addEventListener("touchend", function () {
+        // Remove the class on touchend
+        heading.classList.remove("hover:bg-transparent");
+      });
+    </script>
     <script>
       const canvas = document.getElementById("canvas");
       const context = canvas.getContext("2d");
