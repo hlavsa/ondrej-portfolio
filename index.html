@@ -201,6 +201,16 @@
       #canvas:hover {
         cursor: url("pen-cursor.png"), 20 20, auto;
       }
+      ::-moz-selection {
+        /* Code for Firefox */
+        color: #f2f2f2;
+        background: #020024;
+      }
+
+      ::selection {
+        color: #f2f2f2;
+        background: #020024;
+      }
     </style>
     <script>
       const heading = document.getElementById("myHeading");
