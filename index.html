@@ -65,7 +65,7 @@
   <body>
     <div class="pt-12">
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <div class="pl-14 md:pl-32 pr-14 md:pr-24">
+        <div class="pl-8 md:pl-32 pr-10 md:pr-18">
           <div class="flex items-center">
             <div class="">
               <a href="/">
@@ -86,8 +86,8 @@
             <div class="">
               <p class="text-2xl md:text-xl">
                 Ahoj, jsem Ondřej a jsem full-stack vývojář z České republiky.
-                Vedu tým vývojářů v Red Hatu pro projekt Foreman. Pokud nelezu
-                po skalách, tak programuji v Rails, Reactu nebo VueJS.
+                Vedu tým vývojářů v Red Hatu pro projekt Foreman. <br />Pokud
+                nelezu po skalách, tak programuji v Rails, Reactu nebo VueJS.
               </p>
             </div>
             <div class="">
@@ -132,8 +132,8 @@
             </div>
             <div class="">
               <p class="text-2xl md:text-xl">
-                Mám zájem o spolupráci se začínajícími firmami, kteří chtějí
-                vytvořit něco neopakovatelného. Pomůžu s nasazením prostředí a
+                Mám zájem o spolupráci se začínajícími firmami, které chtějí
+                vytvořit něco neopakovatelného. Pomuhu s výběrem prostředí a
                 optimalizací kódu.<br />
                 <a
                   href="mailto:"
@@ -193,11 +193,16 @@
 
       .v2_19 {
         width: auto;
+        height: 80dvh;
         height: 80vh;
-        background: url("https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2688&q=80");
+        background: url("ondrej.png");
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
         opacity: 1;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
