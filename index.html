@@ -257,7 +257,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+        border-radius: 1rem;
+
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.5);
       }
 
       /* Custom styles for the modal dialog */
@@ -268,17 +273,6 @@
         border-radius: 0.25rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         overflow: auto;
-      }
-      .modal-overlay {
-        margin: 1rem;
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-        width: 400px;
-        height: 200px;
-        border-radius: 1rem;
-
-        -webkit-backdrop-filter: blur(10px) saturate(180%);
-        backdrop-filter: blur(10px) saturate(180%);
-        background-color: rgba(255, 255, 255, 0.5);
       }
     </style>
     <!-- JavaScript for interactivity -->
