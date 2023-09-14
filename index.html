@@ -316,10 +316,17 @@
       const canvas = document.getElementById("canvas");
       const context = canvas.getContext("2d");
       resizeCanvas(); // Call the function to set initial canvas size
+      // Define variables to store the canvas position
+      let canvasOffsetX;
+      let canvasOffsetY;
 
       function resizeCanvas() {
         canvas.width = canvas.parentElement.clientWidth; // Set canvas width to parent container's width
         canvas.height = canvas.parentElement.clientHeight; // Set canvas height to parent container's height
+        // Get the canvas's position relative to the viewport
+        const canvasRect = canvas.getBoundingClientRect();
+        canvasOffsetX = canvasRect.left + window.scrollX;
+        canvasOffsetY = canvasRect.top + window.scrollY;
       }
 
       window.addEventListener("resize", resizeCanvas); // Update canvas size when the window is resized
@@ -341,11 +348,15 @@
           isDrawing = true;
         });
 
+        // Update the cursor position based on canvas position
         canvas.addEventListener("mousemove", (e) => {
+          const cursorX = e.clientX - canvasOffsetX;
+          const cursorY = e.clientY - canvasOffsetY;
+
           if (isDrawing) {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
-            x = e.offsetX;
-            y = e.offsetY;
+            drawLine(context, x, y, cursorX, cursorY);
+            x = cursorX;
+            y = cursorY;
           }
         });
 
