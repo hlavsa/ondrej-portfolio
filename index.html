@@ -355,14 +355,14 @@
         const newImage = document.createElement("img");
         newImage.src = "rappel.png";
         newImage.classList.add("animate");
-        newImage.style.maxWidth = "24px";
+        newImage.style.maxWidth = "48px";
 
         const imageWrapper = imageElement.parentNode;
         const imageWrapperHeight = imageWrapper.offsetHeight;
 
         newImage.style.top = `${imageWrapperHeight}px`;
 
-        document.body.appendChild(newImage);
+        imageWrapper.appendChild(newImage);
 
         setTimeout(() => {
           newImage.style.transform = "translateY(100px)";
