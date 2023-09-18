@@ -176,7 +176,7 @@
               </select>
             </div>
           </div>
-          <div class="overlay-bg"></div>
+          <div class="ml-0 md:ml-24 overlay-bg"></div>
         </div>
       </div>
     </div>
@@ -231,6 +231,8 @@
           rgba(217, 217, 217, 0)
         );
         opacity: 0.7; /* Adjust the opacity as needed */
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
       }
       .dd {
         background: #020024;
@@ -256,6 +258,8 @@
         );
         opacity: 0.7; /* Adjust the opacity as needed */
         z-index: 1; /* Ensure the overlay is above the content */
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
       }
 
       #canvas {
@@ -356,13 +360,14 @@
         newImage.src = "rappel.png";
         newImage.classList.add("animate");
         newImage.style.maxWidth = "48px";
+        newImage.style.position = "absolute"; // Set position to absolute
 
         const imageWrapper = imageElement.parentNode;
         const imageWrapperHeight = imageWrapper.offsetHeight;
 
         newImage.style.top = `${imageWrapperHeight}px`;
 
-        imageWrapper.appendChild(newImage);
+        imageWrapper.appendChild(newImage); // Append the new image to the image wrapper
 
         setTimeout(() => {
           newImage.style.transform = "translateY(100px)";
