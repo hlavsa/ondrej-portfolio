@@ -87,12 +87,9 @@
               <p class="text-2xl md:text-xl">
                 Ahoj, jsem Ondřej a jsem full-stack vývojář z České republiky.
                 Teď vedu tým vývojářů v Red Hatu pro projekt Foreman.
-                <br />A pokud nelezu po
-                <span
-                  class="skalach-image-background"
-                  onclick="handleImageClick(this)"
-                  >skalách</span
-                >, tak programuji v Rails, Reactu a VueJS.
+                <br />A pokud nelezu po <div class="image-wrapper">
+                  <span class="skalach-image-background" onclick="handleImageClick(this)">skalách</span>
+                </div>, tak programuji v Rails, Reactu a VueJS.
               </p>
             </div>
             <div class="">
@@ -315,6 +312,10 @@
         z-index: -1;
       }
 
+      .image-wrapper {
+        position: relative;
+      }
+
       img {
         transition: transform 1s, opacity 1s;
       }
@@ -329,6 +330,13 @@
         const newImage = document.createElement("img");
         newImage.src = "rappel.png";
         newImage.classList.add("animate");
+        newImage.style.maxWidth = "24px";
+
+        const imageWrapper = imageElement.parentNode;
+        const imageWrapperHeight = imageWrapper.offsetHeight;
+
+        newImage.style.top = `${imageWrapperHeight}px`;
+
         document.body.appendChild(newImage);
 
         setTimeout(() => {
