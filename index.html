@@ -196,15 +196,6 @@
         color: #f2f2f2;
       }
 
-      img {
-        transition: transform 1s, opacity 1s;
-      }
-
-      img.animate {
-        transform: translateY(100px);
-        opacity: 0;
-      }
-
       .v2_19 {
         width: auto;
         height: 80dvh;
@@ -323,18 +314,31 @@
         height: 100%;
         z-index: -1;
       }
+
+      img {
+        transition: transform 1s, opacity 1s;
+      }
+
+      img.animate {
+        transform: translateY(0);
+        opacity: 1;
+      }
     </style>
     <script>
       function handleImageClick(imageElement) {
         const newImage = document.createElement("img");
         newImage.src = "rappel.png";
         newImage.classList.add("animate");
-
         document.body.appendChild(newImage);
 
         setTimeout(() => {
+          newImage.style.transform = "translateY(100px)";
+          newImage.style.opacity = 0;
+        }, 0); // Delay of 0 milliseconds
+
+        setTimeout(() => {
           newImage.style.display = "none";
-        }, 2000); // 2-second delay
+        }, 2001); // 2 second delay + 1 millisecond
 
         imageElement.removeEventListener("click", handleImageClick);
       }
